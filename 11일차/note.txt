@@ -1,1 +1,26 @@
 Date : 2022/08/17
+
+터틀 그래픽스(Turtle graphics) 모듈을 사용하여 간단한 그림 그리기ㅋ
+
+• 앞으로 이동: forward, fd
+• 뒤로 이동: backward, bk, back
+• 왼쪽으로 회전: left, lt
+• 오른쪽으로 회전: right, rt
+
+거북이 속도 : speed
+• 'fastest': 0
+• 'fast': 10
+• 'normal': 6
+• 'slow': 3
+• 'slowest': 1
+
+>>> import turtle as t
+
+t.shape : 거북이의 모양을 설정하며 아무것도 지정하지 않으면 화살표 모양이 나옴.
+shape에는 'arrow', 'turtle', 'circle', 'square', 'triangle', 'classic' 등
+>>> t.shape('turtle')
+
+t.forward : 거북이를 작성한 인수(픽셀)만큼 앞으로(forward) 이동.
+>>> t.forward(100)
+
+t.right : 거북이를 작성한 인수(각도)만큼 오른쪽(right)으로 회전.
