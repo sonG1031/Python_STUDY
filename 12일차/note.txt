@@ -26,9 +26,10 @@ Date : 2022/11/23
     [특정 값의 개수 구하기]
     - count(값)
     [리스트의 순서를 뒤집기]
-    - reverse
+    - reverse()
     [리스트의 요소를 정렬]
-    - sort
+    - sort() # 기본 오름차순
+    sort(reverse=True) # 내림차순 정렬
     * sort 메서드와 sorted 함수 차이점 : sort는 메서드를 사용한 리스트를 변경하지만, sorted 함수는 정렬된 새 리스트를 생성함.
     [리스트의 모든 요소를 삭제]
     - clear
