@@ -1,0 +1,53 @@
+Date. 2022/12/06
+
+회문(palindrome): 순서를 거꾸로 읽어도 제대로 읽은 것과 같은 단어와 문장을 말한다.
+
+** 회문은 유전자 염기서열 분석에서 많이 쓰고, N-gram은 빅 데이터 분석, 검색 엔진에서 많이 씀. **
+
+[회문 판별]
+    - 반복문
+        word = input('단어를 입력하세요: ')
+        
+        is_palindrome = True                 # 회문 판별값을 저장할 변수, 초깃값은 True
+        for i in range(len(word) // 2):      # 0부터 문자열 길이의 절반만큼 반복
+            if word[i] != word[-1 - i]:      # 왼쪽 문자와 오른쪽 문자를 비교하여 문자가 다르면
+                is_palindrome = False        # 회문이 아님
+                break
+        
+        print(is_palindrome)                 # 회문 판별값 출력
+
+    - 시퀀스 뒤집기
+        word = input('단어를 입력하세요: ')
+        print(word == word[::-1]) 
+        # 원래 문자열과 반대로 뒤집은(문자열 전체에서 인덱스를 1씩 감소시키면서 요소를 가져옴) 문자열을 비교
+
+    - 리스트와 reversed 사용
+        reversed : 반복 가능한 객체의 요소 순서를 반대로 뒤집는다.
+        word = input('단어를 입력하세요: ')
+        print(list(word) == list(reversed(word)))
+
+    - 문자열의 join 메서드와 reversed 사용
+        word = input('단어를 입력하세요: ')
+        print(word == ''.join(reversed(word)))
+
+N-gram: 문자열에서 N개의 연속된 요소를 추출하는 방법.
+
+[N-gram 출력]
+    - 반복문
+        string = input()
+        n = int(input()) # 몇 n으로 할지 선택
+        for i in range(len(string)-n+1):
+            print(text[i:i+n])
+    
+    - zip
+        text = 'hello'
+        two_gram = zip(text, text[1:])
+        for i in two_gram:
+            print(i[0], i[1], sep='')
+
+    - zip과 리스트 표현식
+        text = 'hello'
+        three_gram = list(zip(*[text[i:] for i in range(3)]))
+        # 리스트에 *를 붙이는 방법은 리스트 언패킹(list unpacking)
+        for i in three_gram:
+        print(i[0], i[1], i[2], sep='')
